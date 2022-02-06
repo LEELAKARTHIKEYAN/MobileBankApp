@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "mobileBankAppUI",
+    "slug": "mobileBankAppUI",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "mobileBankAppUI"
+}
