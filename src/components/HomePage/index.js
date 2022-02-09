@@ -19,7 +19,7 @@ return(
                 <View style={styles.accstats}>
                 <Text style={styles.accTextstats}>Monthly Spending</Text>
                 <Text style={styles.accNumstats}>$ 7,175</Text>
-                {/* <Image source={require('../HomePage/Pictures')} style = {{height: 200, width: 250}} /> */}
+                {/* <Image source={require('../../assests/Pictures/linegraph1.PNG')}/> */}
                 </View>
             </View>
         </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
     },
     tinyLogo: {
-        width: 50,
-        height: 50,
+        width: 20,
+        height: 20,
       },
 })
