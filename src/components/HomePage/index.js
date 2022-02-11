@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 
-import { StyleSheet, Text,View,Image,SafeAreaView,ScrollView,FlatList,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text,View,TouchableOpacity,Pressable ,Button,ActivityIndicator} from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
@@ -13,11 +13,10 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import TopView from './topView';
 import CardView from './cardModal';
 import ExpView from './expView';
+import IconLoad from './iconLoad';
 
 export default function MobileWallie()
 {
-
-
 return(
     <View> 
         {/* To adjust Phone top View */}
@@ -29,8 +28,8 @@ return(
                 <View style={styles.usernav}>
                 <FontAwesome5 name="user-circle" size={35} color="#f5426c" />
                 <Text style={styles.usertag}>Hi, LK!</Text>
-                <View style={{paddingLeft:100 , paddingTop:5}}>
-                <SimpleLineIcons name="refresh" size={30} color="#42f575"/>
+                <View style={{paddingLeft:120 , paddingTop:5}}>
+                <IconLoad/>
                 </View>
                 </View>
             </View>
