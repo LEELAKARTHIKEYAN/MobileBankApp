@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 
-import { StyleSheet, Text,View,Image,SafeAreaView,FlatList,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text,View,Image,SafeAreaView,ScrollView,FlatList,TouchableOpacity} from 'react-native';
 
-import{Ionicons} from '@expo/vector-icons';
-import{AntDesign} from'@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons'; 
 import { SimpleLineIcons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import TopView from './topView';
+import CardView from './cardModal';
+import ExpView from './expView';
 
 export default function MobileWallie()
 {
@@ -31,6 +34,7 @@ return(
                 </View>
                 </View>
             </View>
+
             {/* balance and spending view */}
             <View style={styles.statsview}>
                 <View style={styles.accstats}>
@@ -41,24 +45,31 @@ return(
                 </View>
                 </View>
                 <View style={styles.accstats}>
-                <Text style={styles.accTextstats}>Monthly Spending</Text>
-                <Text style={styles.accNumstats}>$ 7,175</Text>
-                <View style={{paddingLeft:50 , paddingTop:5}}>
-                <SimpleLineIcons name="graph" size={50} color="#e61949" />
-                </View>
-                {/* <Image source={require('../../assests/Pictures/linegraph1.PNG')}/> */}
+                    <Text style={styles.accTextstats}>Monthly Spending</Text>
+                    <Text style={styles.accNumstats}>$ 7,175</Text>
+                    <View style={{paddingLeft:50 , paddingTop:5}}>
+                        <SimpleLineIcons name="graph" size={50} color="#e61949" />
+                    </View>
                 </View>
             </View>
+            <View style={{flexDirection:'row'}}>
             <View style={styles.myexpenditure}>
                 <Text style={{fontSize:18,fontWeight: 'bold', color: 'white',paddingRight:5}}>Your expenditures</Text>
                 <FontAwesome5 name="coins" size={25} color="#e0b638" />
                 {/* ---------add view card modal */}
             </View>
-            <View>
-               {/* scrollView of expenditures */}
+            <CardView/>
             </View>
             <View>
-                {/* ----Pay or deposit sec */}
+               {/* scrollView of expenditures */}
+               <ExpView/>
+            </View>
+            {/* ----pay bar */}
+            <View style={styles.paybar}>
+                <MaterialIcons name="payment" size={30} color="#fcba03" style={styles.payicon}/>
+                <AntDesign name="google" size={30} color="#ed2442"style={styles.payicon} />
+                <MaterialCommunityIcons name="contactless-payment-circle-outline" size={30} color="#3fa6ba" style={styles.payicon} />
+                <FontAwesome5 name="rupee-sign" size={30} color="#45ba3f" style={styles.payicon}/>
             </View>
         </View>
     </View>
@@ -124,5 +135,18 @@ const styles = StyleSheet.create({
           flexDirection:'row',
           paddingTop:20,
           paddingLeft:20,
+      },
+      //paybar
+      paybar:{
+          marginTop:10,
+          paddingTop:8,
+          paddingBottom:8,
+          flexDirection:'row',
+          justifyContent:'space-around',
+          backgroundColor:'#2b2a65',
+          borderRadius:40,
+      },
+      payicon:{
+          padding:2,
       },
 })

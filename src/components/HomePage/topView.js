@@ -6,7 +6,7 @@ export default function TopView()
 {
 return(
     <View style={styles.fullView}>
-        <Text>OverView</Text>
+        <Text>.</Text>
     </View>
 )
 
