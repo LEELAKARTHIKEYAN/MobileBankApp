@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import { Text, View,ActivityIndicator,Pressable } from 'react-native';
 
-import { SimpleLineIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
-const IconLoad= () => {
-    const [animate,setAnm] = useState(false);
-
-    function close(){
-        setAnm(false);
+class IconLoad extends Component {
+  constructor(){
+    super()
+    this.state={
+      showIcon:true
     }
-  return (
-    <View>
-    <SimpleLineIcons name="refresh" size={30} color="green" />
-    </View>
-  );
+  }
+  componentDidMount()
+  {
+    setTimeout(() =>{
+      this.setState({
+        showIcon:false
+      })
+    },7000)
+  }
+  render() {
+    return (
+      <View >
+        {
+          this.state.showIcon ?
+          <ActivityIndicator size="large" color="#00ff00" />
+          :
+<MaterialCommunityIcons name="refresh" size={35} color="#40a629" />        }
+      </View>
+    );
+  }
 }
 
 export default IconLoad;
